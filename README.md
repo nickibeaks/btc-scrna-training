@@ -11,6 +11,6 @@ Description
 * Class start date: 
 
 ## Courses
-| Week | Time                          | Topic                                            | Material |
+| Session | Time                          | Topic                                            | Material |
 |------|-------------------------------|--------------------------------------------------|----------|
 | | | | | |
