@@ -1,0 +1,5 @@
+site_name: BTC single-cell Material
+site_url: https://github.com/WangLab-ComputationalBiology/btc-scrna-training
+nav:
+  - Getting start: index.md
+  - About: about.md
