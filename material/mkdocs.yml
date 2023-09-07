@@ -1,5 +1,33 @@
-site_name: BTC single-cell Material
+site_name: BTC scRNA-Seq Material
 site_url: https://github.com/WangLab-ComputationalBiology/btc-scrna-training
+theme: 
+  name: material
+  features:
+    - navigation.expand
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+plugins:
+  - glightbox
+  - table-reader
+
 nav:
-  - Getting start: index.md
-  - About: about.md
+  - 'Getting started': index.md
+  - Tutorial:
+    - 'Sample and QC filtering': quality-control.md
+    - 'Batch correction and evaluation': batch-correction.md
+    - 'Cell annotation': cell-annotation.md
+    - 'Cell-cell communication': cell-communcation.md
+    - 'Cell trajectory': trajectory.md
+    - 'Malignant meta-programs': meta-programs.md
+  - Documentation: 
+    - 'Workflows and Modules': workflow-and-modules.md
+    - 'Command-line interface': command-line-interface.md
+  - Contributing: contributing.md
+  - FAQ: faq.md
+  - About: 
+    - 'License': license.md
+    - 'Release Notes': release-notes.md
