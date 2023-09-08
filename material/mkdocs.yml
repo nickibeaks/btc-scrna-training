@@ -4,10 +4,18 @@ theme:
   name: material
   features:
     - navigation.expand
+  icon:
+    admonition:
+      note: octicons/tag-16
 markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - attr_list
   - md_in_html
   - def_list
+  - toc:
+      permalink: "#"
   - pymdownx.tasklist:
       custom_checkbox: true
 plugins:
@@ -15,7 +23,9 @@ plugins:
   - table-reader
 
 nav:
-  - 'Getting started': index.md
+  - 'Getting started': 
+    - 'Installation': index.md
+    - 'Advanced settings': advanced.md
   - Tutorial:
     - 'Sample and QC filtering': quality-control.md
     - 'Batch correction and evaluation': batch-correction.md
