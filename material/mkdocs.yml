@@ -28,6 +28,7 @@ nav:
     - 'Advanced settings': advanced.md
   - Tutorial:
     - 'Sample and QC filtering': quality-control.md
+    - 'Dimensionality reduction and clustering': dimensionality-clustering.md
     - 'Batch correction and evaluation': batch-correction.md
     - 'Cell annotation': cell-annotation.md
     - 'Cell-cell communication': cell-communcation.md

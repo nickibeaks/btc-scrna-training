@@ -1,10 +1,10 @@
 # Advanced configuration
 
-## 1. Creating Nextflow profiles
+### 1. Creating Nextflow profiles
 
 For users running the pipeline in an HPC environment, it is necessary to set up a profile. Essentially, Nextflow [profiles](https://www.nextflow.io/docs/latest/config.html#config-profiles) define specific settings related to the job scheduler of the HPC. Various HPCs may employ different engines for job scheduling, such as SLURM, TORQUE, and LSF. 
 
-### 1.1 SLURM profile
+#### 1.1 SLURM profile
 
 The profiles should be written on the `nextflow.config` file. For HPCs, it is essential to load the `singularity` module. This instruction will replace the `module load` command.
 
