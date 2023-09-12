@@ -27,13 +27,14 @@ nav:
     - 'Installation': index.md
     - 'Advanced settings': advanced.md
   - Tutorial:
-    - 'Sample and QC filtering': quality-control.md
-    - 'Dimensionality reduction and clustering': dimensionality-clustering.md
-    - 'Batch correction and evaluation': batch-correction.md
-    - 'Cell annotation': cell-annotation.md
-    - 'Cell-cell communication': cell-communcation.md
-    - 'Cell trajectory': trajectory.md
-    - 'Malignant meta-programs': meta-programs.md
+    - '1. Sample and QC filtering': quality-control.md
+    - '2. Dimensionality reduction and clustering': dimensionality-clustering.md
+    - '3. Cell stratification and CNV Analysis': stratification-and-cnv.md
+    - '4. Batch correction and evaluation': batch-correction.md
+    - '5. Cell annotation': cell-annotation.md
+    - '6. Cell-cell communication': cell-communcation.md
+    - '7. Cell trajectory': trajectory.md
+    - '8. Malignant meta-programs': meta-programs.md
   - Documentation: 
     - 'Workflows and Modules': workflow-and-modules.md
     - 'Command-line interface': command-line-interface.md

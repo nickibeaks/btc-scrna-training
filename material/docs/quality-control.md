@@ -13,11 +13,11 @@ Quality control (QC) is an essential step on single cell RNA-seq projects. Low-q
 * **Identifying Empty Droplets:** Distinguishes cell-containing droplets from empty ones, with methods like emptyDrops and other tools available.
 * **Removing Ambient RNAs:** Addresses contamination from ambient RNAs using statistical approaches.
 
-## Hands-on
+## Step-by-step
 
 The current pipeline version covers most common QC metrics, including the parameters described below. In this tutorial, we will cover the very basic steps regarding Cellranger alignment and sample filtering.
 
-### 1. Running pipeline using default parameters
+### 1. Running pipeline
 
 To improve reproducibility we suggest several thresholds based on multiple reports on literature (see below). In addition, for this training we will leverage a dataset derived MSK Spectrum [[1]](https://www.nature.com/articles/s41586-022-05496-1). The dataset can be download through the BTC Buckets [[2]]().
 
@@ -29,20 +29,35 @@ nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_ta
 
 By default the previous command line considers thresholds.
 
-!!! Thresholds
+!!! info "HPC"
 
-    * `thr_estimate_n_cells` = 300
-    * `thr_mean_reads_per_cells` = 25000
-    * `thr_median_genes_per_cell` = 900
-    * `thr_median_umi_per_cell` = 1000
-    * `thr_nFeature_RNA_min` = 300
-    * `thr_nFeature_RNA_max` = 7500
-    * `thr_percent_mito` = 25
-    * `thr_n_observed_cells` = 300
+    * `thr_estimate_n_cells`        = 300
+    * `thr_mean_reads_per_cells`    = 25000
+    * `thr_median_genes_per_cell`   = 900
+    * `thr_median_umi_per_cell`     = 1000
+    * `thr_nFeature_RNA_min`        = 300
+    * `thr_nFeature_RNA_max`        = 7500
+    * `thr_percent_mito`            = 25
+    * `thr_n_observed_cells`        = 300
 
-### 2. Inspecting HTML report
+### 2. Inspecting report
 
-A fundamental component in the pipeline is related to its HTML reports generation. Over the tutorials, we will browse several HTML reports and discuss key features in each analysis.
+A fundamental component in the pipeline is related to its HTML reports generation. Over the tutorials, we will browse several HTML reports and discuss key features in each analysis. The first report, "Rendering QC report", produces an interactive table reporting estimates and observed metrics for each sample.
 
+![Image caption](https://dummyimage.com/600x400/){align=center}
 
+The QC table displays metrics related to multiple samples, along with a QC label indicating the status of each sample (SUCCESS, FIXABLE, or FAILURE). The filtering system was developed with a focus on traceability, allowing users to inspect which metrics do not meet expectations and make necessary adjustments. Additionally, it enables users to determine whether the samples are failing at the library preparation stage or due to cell-level quality issues.
 
+### 3. Adjusting filterings
+
+Now that we have assessed the quality control reports, we will proceed with the analysis by adjusting the threshold. In this case, we will be more permissive to include the **SPECTRUM-OV-065_S1_CD45P_RIGHT_OVARY** sample. To achieve this, we will change the `thr_n_observed_cells` to 250 cells after filtering mitochondrial RNA percentage. Please note that this adjustment will be applied specifically to this subset, which contains only a fraction of cells per sample.
+
+```{.bash .copy}
+
+nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_table.csv --meta_data meta_data.csv --cancer_type Ovarian --thr_n_observed_cells 250 -resume -profile seadragon
+
+```
+
+!!! tip
+
+    The Nextflow caching system ensures that the alignment step is not rerun. As a result, only the QC filtering will be executed, along with the generation of the new project report.

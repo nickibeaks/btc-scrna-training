@@ -2,9 +2,74 @@
 
 ## Motivation
 
-Dimensionality reduction in single-cell studies compresses high-dimensional transcriptional data into a simpler form using methods like t-SNE, UMAP, or PCA. After dimensionality reduction simplifies high-dimensional data into a more manageable form, clustering becomes more effective and accurate.
+Dimensionality reduction and cell clustering are fundamental steps in single-cell RNA-sequencing (scRNA-seq) analysis. In this tutorial, we emphasize the primary parameters associated with dimensionality reduction and clustering. We will also delve into PCA loadings, metrics for evaluating clustering, and UMAP visualization
 
-Resolution determines the granularity of clustering. A higher resolution will result in more, smaller clusters, potentially capturing subtle differences between cell states. Conversely, a lower resolution might group distinct cell types or states into broader categories. Adjusting the resolution allows researchers to explore the data at various levels of detail, from broad cell types to finer subtypes or transitional states.
+## Hands-on
 
-The optimal number of clusters is a crucial parameter to ensure meaningful categorization. Too few clusters might overlook important cellular heterogeneity, while too many can lead to over-segmentation, where genuinely similar cells are divided into unnecessary subgroups. Various methods, like the elbow method or silhouette analysis, can be employed to determine the optimal number, ensuring that the chosen clusters best represent the underlying data structure.
+In this hands-on section, we will cover several analytical steps. Initially, the pipeline will combine sample matrices into one Seurat object. Subsequently, it will carry out normalization, dimensionality reduction, and clustering. Collectively, these procedures will generate a preliminary clustering used for distinguishing between malignant and non-malignant cells.
 
+### 1. Running pipeline
+
+Currently, the pipeline permits users to modify several parameters, encompassing crucial thresholds like the number of highly variable genes and clustering resolution. Please, see the list below. 
+
+```{.bash .copy}
+
+nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_table.csv --meta_data meta_data.csv --cancer_type Ovarian -resume -profile seadragon
+
+```
+
+By default the previous command line considers thresholds.
+
+!!! info "HPC"
+
+    * `thr_n_features`                = 2000
+    * `input_integration_dimension`   = auto
+    * `input_group_plot`              = source_name,Sort
+    * `thr_resolution`                = 0.25
+    * `thr_proportion`                = 0.25
+
+Alternatively, we execute this task on [Cirro](https://cirro.bio).
+
+!!! info "Cirro"
+
+    * `Number features for FindVariableFeatures`                = 2000
+    * `Embeddings for Louvain clustering`                       = auto
+    * `Meta-data columns for UMAP plot`                         = source_name,Sort
+    * `Resolution threshold`                                    = 0.25
+    * `Cell proportion for ROGUE calculation`                   = 0.25
+
+### 2. Inspecting report
+
+#### 2.1. Highly variable genes (HGV)
+
+In the first report, produces multiple figures, including the HGV distribution on the dataset. Alternatively, the user can doublecheck which genes is contributing (loadings) to each principal component.
+
+![Image caption](figures/pca-highly-variable-features.png){align=center}
+
+As mentione earlier, loadings represent the genes/features contribution to each principal component or other dimension reduction. Visualizing loadings provides insights in which genes are driving the separation observed in a particular component. In turn, these genes will strongly the clustering process.
+
+![Image caption](figures/pca-loadings.png){align=center}
+
+#### 2.2. UMAP and cluster composition
+
+The next step on the pipeline will perform clustering over the dimensions (e.g. PCs). Here,  we can access the clustering profile, composition, and quality.
+
+![Image caption](figures/umap-clustering.png){align=center}
+
+![Image caption](figures/barplot-cluster-composition.png){align=center}
+
+The barplot illustrates the cluster composition per sample. Clusters dominated by a single sample might indicate populations of malignant cells.
+
+#### 2.3. Clustering assessement
+
+ROGUE is an entropy-based metric designed to evaluate cluster purity in single-cell RNA sequencing (scRNA-seq) data. In essence, it assists in refining clustering by suggesting when clusters should be split or merged. High ROGUE scores correlate with purity, meaning clusters consist of cells displaying similar transcriptional backgrounds. Conversely, low ROGUE scores indicate cluster heterogeneity, suggesting clusters comprise varied cell populations and should be further subdivided.
+
+![Image caption](figures/boxplot-rogue.png){align=center}
+
+The ROGUE score can also provide insights regarding data quality. For example, samples with a low average ROGUE score may contain a higher proportion of doublets.
+
+---
+
+## Reference
+
+1. [An entropy-based metric for assessing the purity of single cell populations](https://www.nature.com/articles/s41467-020-16904-3)

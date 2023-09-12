@@ -42,4 +42,5 @@ The previous snippet creates a profile for a institution powered by SLURM. It in
 
 ---
 
-## 2. Adding new gene markers
+## 2. Adding gene signatures and meta-programs
+
