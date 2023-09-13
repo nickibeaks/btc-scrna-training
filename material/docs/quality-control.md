@@ -61,3 +61,5 @@ nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_ta
 !!! tip
 
     The Nextflow caching system ensures that the alignment step is not rerun. As a result, only the QC filtering will be executed, along with the generation of the new project report.
+
+## Reference

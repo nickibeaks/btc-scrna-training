@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/WangLab-ComputationalBiology/btc-scrna-training/advanced/">
+        <link rel="canonical" href="https://github.com/WangLab-ComputationalBiology/btc-scrna-training/stratification-and-cnv/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../dimensionality-clustering/">
       
       
-        <link rel="next" href="../quality-control/">
+        <link rel="next" href="../batch-correction/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Advanced settings - BTC scRNA-Seq Material</title>
+        <title>3. Cell stratification and CNV Analysis - BTC scRNA-Seq Material</title>
       
     
     
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#advanced-configuration" class="md-skip">
+        <a href="#cell-stratification-and-cnv" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Advanced settings
+              3. Cell stratification and CNV Analysis
             
           </span>
         </div>
@@ -172,19 +172,19 @@
       
   
   
-    
-  
   
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
         
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
@@ -197,7 +197,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Getting started
@@ -228,29 +228,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Advanced settings
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../advanced/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -259,53 +239,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-creating-nextflow-profiles" class="md-nav__link">
-    1. Creating Nextflow profiles
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Creating Nextflow profiles">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-slurm-profile" class="md-nav__link">
-    1.1 SLURM profile
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-adding-gene-signatures-and-meta-programs" class="md-nav__link">
-    2. Adding gene signatures and meta-programs
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -322,19 +255,19 @@
       
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
@@ -347,7 +280,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Tutorial
@@ -398,9 +331,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../stratification-and-cnv/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    3. Cell stratification and CNV Analysis
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -409,6 +362,94 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#motivation" class="md-nav__link">
+    Motivation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step-by-step
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-running-pipeline" class="md-nav__link">
+    1. Running pipeline
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-inspecting-report" class="md-nav__link">
+    2. Inspecting report
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Inspecting report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-infercnv-predictions" class="md-nav__link">
+    2.1. InferCNV predictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-consensus-approach-under-development" class="md-nav__link">
+    2.2. Consensus approach (under development)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-cd45-marker-based-on-facs" class="md-nav__link">
+    2.3. CD45 marker based on FACS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -712,17 +753,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-creating-nextflow-profiles" class="md-nav__link">
-    1. Creating Nextflow profiles
+  <a href="#motivation" class="md-nav__link">
+    Motivation
   </a>
   
-    <nav class="md-nav" aria-label="1. Creating Nextflow profiles">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step-by-step
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-step">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-slurm-profile" class="md-nav__link">
-    1.1 SLURM profile
+  <a href="#1-running-pipeline" class="md-nav__link">
+    1. Running pipeline
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-inspecting-report" class="md-nav__link">
+    2. Inspecting report
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Inspecting report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-infercnv-predictions" class="md-nav__link">
+    2.1. InferCNV predictions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-consensus-approach-under-development" class="md-nav__link">
+    2.2. Consensus approach (under development)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-cd45-marker-based-on-facs" class="md-nav__link">
+    2.3. CD45 marker based on FACS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -732,8 +814,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-adding-gene-signatures-and-meta-programs" class="md-nav__link">
-    2. Adding gene signatures and meta-programs
+  <a href="#reference" class="md-nav__link">
+    Reference
   </a>
   
 </li>
@@ -753,40 +835,51 @@
                   
 
 
-<h1 id="advanced-configuration">Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">#</a></h1>
-<h3 id="1-creating-nextflow-profiles">1. Creating Nextflow profiles<a class="headerlink" href="#1-creating-nextflow-profiles" title="Permanent link">#</a></h3>
-<p>For users running the pipeline in an HPC environment, it is necessary to set up a profile. Essentially, Nextflow <a href="https://www.nextflow.io/docs/latest/config.html#config-profiles">profiles</a> define specific settings related to the job scheduler of the HPC. Various HPCs may employ different engines for job scheduling, such as SLURM, TORQUE, and LSF. </p>
-<h4 id="11-slurm-profile">1.1 SLURM profile<a class="headerlink" href="#11-slurm-profile" title="Permanent link">#</a></h4>
-<p>The profiles should be written on the <code>nextflow.config</code> file. For HPCs, it is essential to load the <code>singularity</code> module. This instruction will replace the <code>module load</code> command.</p>
-<div class="copy highlight"><pre><span></span><code>institution<span class="w"> </span><span class="o">{</span>
-
-<span class="w">    </span><span class="nv">module</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;singularity/3.7.0&#39;</span>
-
-<span class="w">    </span>singularity<span class="w"> </span><span class="o">{</span>
-
-<span class="w">        </span><span class="nv">enabled</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
-
-<span class="w">    </span><span class="o">}</span>
-
-<span class="w">    </span>process<span class="w"> </span><span class="o">{</span>
-
-<span class="w">        </span><span class="nv">executor</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;slurm&#39;</span>
-<span class="w">        </span><span class="nv">queue</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;medium&#39;</span>
-
-<span class="w">    </span><span class="o">}</span>
-
-<span class="w">    </span>params<span class="w"> </span><span class="o">{</span>
-
-<span class="w">        </span><span class="nv">max_memory</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="m">128</span>.GB
-<span class="w">        </span><span class="nv">max_cpus</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">32</span>
-<span class="w">        </span><span class="nv">max_time</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">24</span>.h
-
-<span class="w">    </span><span class="o">}</span>
-<span class="o">}</span>
+<h1 id="cell-stratification-and-cnv">Cell stratification and CNV<a class="headerlink" href="#cell-stratification-and-cnv" title="Permanent link">#</a></h1>
+<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">#</a></h2>
+<p>Distinguishing malignant cells from normal cells remains a significant challenge in single-cell transcriptomics. To confidently identify malignant cells among other cell populations, multiple pieces of evidence are necessary. In our pipeline, we have incorporated two common types of evidence: gene signatures and CNV analysis.</p>
+<h2 id="step-by-step">Step-by-step<a class="headerlink" href="#step-by-step" title="Permanent link">#</a></h2>
+<p>In this module, we employ a conservative strategy, offering users the choice between two distinct methods for identifying malignant populations: i) the inferCNV-based method, and ii) the consensus score. The consensus score is a method currently under development, which amalgamates gene signatures, various CNV predictions, and cluster/patient specificity.</p>
+<h3 id="1-running-pipeline">1. Running pipeline<a class="headerlink" href="#1-running-pipeline" title="Permanent link">#</a></h3>
+<div class="copy highlight"><pre><span></span><code>nextflow<span class="w"> </span>run<span class="w"> </span>single_cell_basic.nf<span class="w"> </span>--project_name<span class="w"> </span>Training<span class="w"> </span>--sample_csv<span class="w"> </span>sample_table.csv<span class="w"> </span>--meta_data<span class="w"> </span>meta_data.csv<span class="w"> </span>--cancer_type<span class="w"> </span>Ovarian<span class="w"> </span>-resume<span class="w"> </span>-profile<span class="w"> </span>seadragon
 </code></pre></div>
-<p>The previous snippet creates a profile for a institution powered by SLURM. It includes several settings, such as loading modules like <code>singularity/3.7.0</code>, and specifying the job scheduling engine with the <code>executor</code> property. Nextflow works with many engines; for more details, refer to the official <a href="https://nf-co.re/docs/usage/tutorials/step_by_step_institutional_profile">documentation</a>. Please note that the <code>process</code>  scope should match the HPC specs, i.e., queue, memory and cpus.</p>
-<hr />
-<h2 id="2-adding-gene-signatures-and-meta-programs">2. Adding gene signatures and meta-programs<a class="headerlink" href="#2-adding-gene-signatures-and-meta-programs" title="Permanent link">#</a></h2>
+<p>By default the previous command line considers thresholds.</p>
+<div class="admonition info">
+<p class="admonition-title">HPC</p>
+<ul>
+<li><code>input_stratification_method</code>   = infercnv_label</li>
+<li><code>thr_cluster_size</code>              = 1000</li>
+<li><code>thr_consensus_score</code>           = 2</li>
+</ul>
+</div>
+<p>Alternatively, we execute this task on <a href="https://cirro.bio">Cirro</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Cirro</p>
+<ul>
+<li><code>Method to define stratification labels</code>            = 2000</li>
+<li><code>Defining cluster size limit</code>                       = auto</li>
+<li><code>Consensus score threshold (Beta)</code>                  = source_name,Sort</li>
+</ul>
+</div>
+<h3 id="2-inspecting-report">2. Inspecting report<a class="headerlink" href="#2-inspecting-report" title="Permanent link">#</a></h3>
+<h4 id="21-infercnv-predictions">2.1. InferCNV predictions<a class="headerlink" href="#21-infercnv-predictions" title="Permanent link">#</a></h4>
+<p>The first UMAP displays malignancy status based on inferCNV predictions. By default, the pipeline will utilize this annotation for downstream analysis. The inferCNV leverages in a hidden Markov model (HMM) to identify copy number variations (CNVs) status based on expression data. It is a time-consuming task, therefore we applied a heuristic to subsampling cells per cluster, <code>thr_cluster_size</code>. In summary, the method performs well, but it has limitations displaying misassigned cells, and low accuracy in small populations.</p>
+<p><a class="glightbox" href="../figures/umap-infercnv.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="center" alt="Image caption" src="../figures/umap-infercnv.png" /></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>InferCNV predictions are carried out in two distinct modes: reference-based, which leverages known malignant cells from the single-cell experiment, and reference-free mode, which employs a statistical procedure to estimate the CNV load cut-off. Currently, we utilize the reference-free mode. <strong>The pipeline stores the inferCNV heatmap in the data folder</strong>.</p>
+</div>
+<h4 id="22-consensus-approach-under-development">2.2. Consensus approach (under development)<a class="headerlink" href="#22-consensus-approach-under-development" title="Permanent link">#</a></h4>
+<p>Alternatively, we also offer annotations based on the consensus approach (<strong>under development</strong>), which appears to more effectively capture smaller cell populations. However, neither approach can be considered flawless.</p>
+<p><a class="glightbox" href="../figures/umap-consensus.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="center" alt="Image caption" src="../figures/umap-consensus.png" /></a></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The user can change malignancy classifier by switching the parameter, <code>input_stratification_method</code>. The options are <strong>infercnv_label</strong> or <strong>consensus_label</strong>.</p>
+</div>
+<h4 id="23-cd45-marker-based-on-facs">2.3. CD45 marker based on FACS<a class="headerlink" href="#23-cd45-marker-based-on-facs" title="Permanent link">#</a></h4>
+<p><a class="glightbox" href="../figures/umap-cd45.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="center" alt="Image caption" src="../figures/umap-cd45.png" /></a></p>
+<p>The malignancy prediction can generally be correlated with CD45 status (protein-level expression). However, minor discrepancies might be linked to the presence of <strong>normal</strong> epithelial cells in the dataset.</p>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">#</a></h2>
 
 
 

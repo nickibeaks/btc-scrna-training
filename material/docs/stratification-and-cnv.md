@@ -42,11 +42,11 @@ The first UMAP displays malignancy status based on inferCNV predictions. By defa
 
 !!! warning
 
-    InferCNV predictions are carried out in two distinct modes: reference-based, which leverages known malignant cells from the single-cell experiment, and reference-free mode, which employs a statistical procedure to estimate the CNV load cut-off. Currently, we utilize the reference-free mode.
+    InferCNV predictions are carried out in two distinct modes: reference-based, which leverages known malignant cells from the single-cell experiment, and reference-free mode, which employs a statistical procedure to estimate the CNV load cut-off. Currently, we utilize the reference-free mode. **The pipeline stores the inferCNV heatmap in the data folder**.
 
 #### 2.2. Consensus approach (under development)
 
-Alternatively, we also offer annotations derived from the consensus approach (**under development**), which appears to more effectively capture smaller cell populations. However, neither approach can be considered flawless.
+Alternatively, we also offer annotations based on the consensus approach (**under development**), which appears to more effectively capture smaller cell populations. However, neither approach can be considered flawless.
 
 ![Image caption](figures/umap-consensus.png){align=center}
 
@@ -60,3 +60,5 @@ Alternatively, we also offer annotations derived from the consensus approach (**
 ![Image caption](figures/umap-cd45.png){align=center}
 
 The malignancy prediction can generally be correlated with CD45 status (protein-level expression). However, minor discrepancies might be linked to the presence of **normal** epithelial cells in the dataset.
+
+## Reference

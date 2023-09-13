@@ -2,6 +2,48 @@
 
 ## Motivation
 
-Meta-programs in single-cell analysis streamline the intricate transcriptional patterns identified in diverse cell types through scRNA-seq. By condensing this complex data into overarching themes, meta-program analysis provides a clearer perspective on shared cellular processes. This approach is essential for harnessing the depth of scRNA-seq data, facilitating a deeper understanding of disease mechanisms and highlighting potential therapeutic targets.
+Meta-program analyses are powerful strategies for uncovering intratumor heterogeneity (ITH). We built our meta-program module based on data published by Gavish et al. These meta-programs encompass a range of cellular processes, covering both generic patterns (such as cell cycle and stress) and cancer lineage-specific ones, e.g., 11 ITH hallmarks.
 
-## Parameters
+## Step-by-Step
+
+
+
+### 1. Running pipeline
+
+```{.bash .copy}
+
+nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_table.csv --meta_data meta_data.csv --cancer_type Ovarian -resume -profile seadragon
+
+```
+
+!!! info "HPC"
+
+    * `input_meta_programs_db`    = ./assets/meta_programs_database.csv
+    * `input_cell_category`       = Malignant
+    * `input_heatmap_annotation`  = source_name;seurat_clusters
+
+Alternatively, we execute this task on [Cirro](https://cirro.bio).
+
+!!! info "Cirro"
+
+    * `Input meta-program`                                          = Default
+    * `Meta-program cell category`                                  = Malignant
+    * `Meta-data columns to be displayed on heatmap`                = source_name;seurat_clusters
+
+### 2. Inspecting report
+
+#### 2.1. Meta-program and ITH prediction
+
+The heatmap offers a detailed overview of meta-programs associated with malignant cells. Moreover, users have the option to include annotations related to meta-data, such as **source_name** and **seurat_clusters**.
+
+![Image caption](figures/heatmap-meta-programs.png){align=center}
+
+#### 2.2. ITH signatures
+
+Similar to the cell annotation module, we also offer a FeaturePlot panel that reports the Module score for each ITH meta-program across malignant cells.
+
+![Image caption](figures/featureplot-meta-program.png){align=center}
+
+## Reference
+
+1. [Hallmarks of transcriptional intratumour heterogeneity across a thousand tumours](https://www.nature.com/articles/s41586-023-06130-4)
