@@ -34,9 +34,9 @@ Alternatively, we execute this task on [Cirro](https://cirro.bio).
 
 ### 2. Inspecting report
 
-#### 2.1. Quality control table
+#### 2.1. Batch evaluation table
 
-#### 2.2. Before and after 
+#### 2.2. LISI - Before and after 
 
 ## Reference
 

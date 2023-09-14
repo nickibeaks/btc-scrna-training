@@ -11,6 +11,7 @@ Reference genome-related files and options required for the workflow.
 | `project_name` | Project name | `string` | Test |
 | `cancer_type` | Enter the cancer type | `string` | None |
 | `genome` | Enter genome name | `string` | GRCh38 |
+| `igenomes_base` | Enter URL/Path to the genome | `string` | gs://btc-refdata/scRNA/refData |
 
 ## Quality Control parameters
 
