@@ -1,8 +1,11 @@
 # Release notes
 
-- [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
-- [ ] Vestibulum convallis sit amet nisi a tincidunt
-    * [x] In hac habitasse platea dictumst
-    * [x] In scelerisque nibh non dolor mollis congue sed et metus
-    * [ ] Praesent sed risus massa
-- [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
+## Version 1.0 (Stable)
+
+- [x] Alignment module and QC control
+  * [x] Doublet identification
+- [x] Cell stratification and CNV analysis
+- [x] Major cell annotation
+- [x] Batch effect correction and evaluation
+- [x] Cell-cell communication
+- [x] Meta-programs
