@@ -63,6 +63,5 @@ nextflow run single_cell_basic.nf -params-file <PARAMS.json> -resume -profile <P
 
 ### 5. Expect outputs
 
-```{ .bash .copy }
-# Output tree
-```
+![Image caption](figures/schema-output.png){align=center}
+

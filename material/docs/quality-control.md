@@ -63,3 +63,6 @@ nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_ta
     The Nextflow caching system ensures that the alignment step is not rerun. As a result, only the QC filtering will be executed, along with the generation of the new project report.
 
 ## Reference
+
+1. [Integrated analysis of multimodal single-cell data](https://www.sciencedirect.com/science/article/pii/S0092867421005833?via%3Dihub)
+2. [DoubletFinder: Doublet Detection in Single-Cell RNA Sequencing Data Using Artificial Nearest Neighbors](https://www.sciencedirect.com/science/article/pii/S2405471219300730)
