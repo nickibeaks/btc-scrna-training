@@ -10,15 +10,20 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 ### 1. Running pipeline
 
+#### 1.1. On HPC
+
+!!! info "HPC"
+
+    * `input_cell_markers_db`    = ./assets/cell_markers_database.csv
+    * `input_annotation_level`   = Major cells
+
 ```{.bash .copy}
 
 nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_table.csv --meta_data meta_data.csv --cancer_type Ovarian -resume -profile seadragon
 
 ```
-!!! info "HPC"
 
-    * `input_cell_markers_db`    = ./assets/cell_markers_database.csv
-    * `input_annotation_level`   = Major cells
+#### 1.2. On Cirro
 
 Alternatively, we execute this task on [Cirro](https://cirro.bio).
 

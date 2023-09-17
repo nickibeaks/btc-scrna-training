@@ -12,11 +12,7 @@ In this hands-on section, we will cover several analytical steps. Initially, the
 
 Currently, the pipeline permits users to modify several parameters, encompassing crucial thresholds like the number of highly variable genes and clustering resolution. Please, see the list below. 
 
-```{.bash .copy}
-
-nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_table.csv --meta_data meta_data.csv --cancer_type Ovarian -resume -profile seadragon
-
-```
+#### 1.2. On the HPC
 
 By default the previous command line considers thresholds.
 
@@ -27,6 +23,14 @@ By default the previous command line considers thresholds.
     * `input_group_plot`              = source_name,Sort
     * `thr_resolution`                = 0.25
     * `thr_proportion`                = 0.25
+
+```{.bash .copy}
+
+nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_table.csv --meta_data meta_data.csv --cancer_type Ovarian -resume -profile seadragon
+
+```
+
+#### 1.2. On Cirro
 
 Alternatively, we execute this task on [Cirro](https://cirro.bio).
 

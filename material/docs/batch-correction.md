@@ -16,18 +16,26 @@ nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_ta
 
 ```
 
+#### 1.1. On HPC
+
 By default the previous command line considers thresholds.
 
 !!! info "HPC"
 
+    * `input_integration_method`       = all
+    * `input_target_variables`         = batch
     * `input_integration_evaluate`     = all
     * `thr_cell_proportion`            = 0.30
     * `input_lisi_variables`           = cLISI;iLISI
+
+#### 1.1. On Cirro
 
 Alternatively, we execute this task on [Cirro](https://cirro.bio).
 
 !!! info "Cirro"
 
+    * `Batch correction / Integration methods`      = all
+    * `Target variable for batch correction`        = batch
     * `Define methods to be evaluated`              = all
     * `Cell proportion for Batch evaluation`        = 0.30
     * `Define LISI types for Density plot`          = cLISI;iLISI
@@ -36,10 +44,28 @@ Alternatively, we execute this task on [Cirro](https://cirro.bio).
 
 #### 2.1. Batch evaluation table
 
-#### 2.2. LISI - Before and after 
+To ensure interpretability we incorporated multiple quality metrics. These metrics are related to both biological conservation and clustering quality.
+
+![Image caption](figures/report-evaluation.png){align=center}
+
+Furthermore, we leverage the scPOP z-score to aggregate multiple metrics. It is a basic approach, but it can be used to select which batch correction method is performing better on that specific dataset.
+
+![Image caption](figures/report-evaluation2.png){align=center}
+
+
+#### 2.2. UMAP and LISI plots
+
+Alternatively, the pipeline also allows visual inspection through UMAP and LISI plots.
+
+![Image caption](figures/umap-batch-correction.png){align=center}
+
+LISI plots comprise two components: iLISI and cLISI. iLISI evaluates the mixing of datasets, indicating the effectiveness of data integration. On the other hand, cLISI is related to cell-type correction, i.e., it measures if identical cells are grouped together across datasets. For iLISI, higher values are preferable, while for cLISI, lower values are desired.
+
+![Image caption](figures/lisi-fastmnn.png){align=center}
 
 ## Reference
 
 1. [A test metric for assessing single-cell RNA-seq batch correction](https://www.nature.com/articles/s41592-018-0254-1)
 2. [Benchmarking atlas-level data integration in single-cell genomics](https://www.nature.com/articles/s41592-021-01336-8)
 3. [scPOP](https://github.com/vinay-swamy/scPOP)
+4. [Fast, sensitive and accurate integration of single-cell data with Harmony](https://www.nature.com/articles/s41592-019-0619-0)

@@ -14,11 +14,7 @@ To ensure reproducibility, we consolidated markers from various publications int
 
 ### 1. Running pipeline
 
-```{.bash .copy}
-
-nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_table.csv --meta_data meta_data.csv --cancer_type Ovarian -resume -profile seadragon
-
-```
+#### 1.1. On the HPC
 
 !!! info "HPC"
 
@@ -26,6 +22,14 @@ nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_ta
     * `input_annotation_level`   = Major cells
 
 Alternatively, we execute this task on [Cirro](https://cirro.bio).
+
+```{.bash .copy}
+
+nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_table.csv --meta_data meta_data.csv --cancer_type Ovarian -resume -profile seadragon
+
+```
+
+#### 1.2. On Cirro
 
 !!! info "Cirro"
 
