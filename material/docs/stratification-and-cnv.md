@@ -28,13 +28,13 @@ nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_ta
 
 #### 1.2. On Cirro
 
-Alternatively, we execute this task on [Cirro](https://cirro.bio).
+Alternatively, we execute this task on [Cirro](https://cirro.bio). Please, be sure that all the subsequent runs will derived from `Run_01`.
 
 !!! info "Cirro"
 
-    * `Method to define stratification labels`            = 2000
-    * `Defining cluster size limit`                       = auto
-    * `Consensus score threshold (Beta)`                  = source_name,Sort
+    * `Method to define stratification labels`            = infercnv_label
+    * `Defining cluster size limit`                       = 1000
+    * `Consensus score threshold (Beta)`                  = 2
 
 ### 2. Inspecting report
 
@@ -59,7 +59,6 @@ Alternatively, we also offer annotations based on the consensus approach (**unde
     The user can change malignancy classifier by switching the parameter, `input_stratification_method`. The options are **infercnv_label** or **consensus_label**.
 
 #### 2.3. CD45 marker based on FACS
-
 
 ![Image caption](figures/umap-cd45.png){align=center}
 

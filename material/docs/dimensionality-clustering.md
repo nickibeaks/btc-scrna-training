@@ -12,7 +12,7 @@ In this hands-on section, we will cover several analytical steps. Initially, the
 
 Currently, the pipeline permits users to modify several parameters, encompassing crucial thresholds like the number of highly variable genes and clustering resolution. Please, see the list below. 
 
-#### 1.2. On the HPC
+#### 1.1. On the HPC
 
 By default the previous command line considers thresholds.
 

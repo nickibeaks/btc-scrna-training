@@ -10,12 +10,6 @@ The batch module consists of two steps: batch effect correction and assessment u
 
 ### 1. Running pipeline
 
-```{.bash .copy}
-
-nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_table.csv --meta_data meta_data.csv --cancer_type Ovarian -resume -profile seadragon
-
-```
-
 #### 1.1. On HPC
 
 By default the previous command line considers thresholds.
@@ -28,7 +22,14 @@ By default the previous command line considers thresholds.
     * `thr_cell_proportion`            = 0.30
     * `input_lisi_variables`           = cLISI;iLISI
 
-#### 1.1. On Cirro
+
+```{.bash .copy}
+
+nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_table.csv --meta_data meta_data.csv --cancer_type Ovarian -resume -profile seadragon
+
+```
+
+#### 1.2. On Cirro
 
 Alternatively, we execute this task on [Cirro](https://cirro.bio).
 

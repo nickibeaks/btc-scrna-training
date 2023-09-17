@@ -21,12 +21,6 @@ The current pipeline version covers most common QC metrics, including the parame
 
 To improve reproducibility we suggest several thresholds based on multiple reports on literature (see below). In addition, for this training we will leverage a dataset derived MSK Spectrum [[1]](https://www.nature.com/articles/s41586-022-05496-1). The dataset can be download through the BTC Buckets [[2]]().
 
-```{.bash .copy}
-
-nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_table.csv --meta_data meta_data.csv --cancer_type Ovarian -resume -profile seadragon
-
-```
-
 #### 1.1. On HPC
 
 By default the previous command line considers thresholds.
@@ -41,6 +35,12 @@ By default the previous command line considers thresholds.
     * `thr_nFeature_RNA_max`        = 7500
     * `thr_percent_mito`            = 25
     * `thr_n_observed_cells`        = 300
+
+```{.bash .copy}
+
+nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_table.csv --meta_data meta_data.csv --cancer_type Ovarian -resume -profile seadragon
+
+```
 
 ### 2. Inspecting report
 
