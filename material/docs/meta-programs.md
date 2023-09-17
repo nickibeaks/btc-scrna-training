@@ -6,9 +6,15 @@ Meta-program analyses are powerful strategies for uncovering intratumor heteroge
 
 ## Step-by-Step
 
-
-
 ### 1. Running pipeline
+
+#### 1.1. On the HPC
+
+!!! info "HPC"
+
+    * `input_meta_programs_db`    = ./assets/meta_programs_database.csv
+    * `input_cell_category`       = Malignant
+    * `input_heatmap_annotation`  = source_name;seurat_clusters
 
 ```{.bash .copy}
 
@@ -16,11 +22,7 @@ nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_ta
 
 ```
 
-!!! info "HPC"
-
-    * `input_meta_programs_db`    = ./assets/meta_programs_database.csv
-    * `input_cell_category`       = Malignant
-    * `input_heatmap_annotation`  = source_name;seurat_clusters
+#### 1.2. On Cirro
 
 Alternatively, we execute this task on [Cirro](https://cirro.bio).
 
