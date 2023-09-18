@@ -32,6 +32,10 @@ The metadata file, in .csv format, should encompass variables pertinent to the e
 
 {{ read_csv('./assets/ovarian_meta_data.csv') }}
 
+!!! warning
+
+    Internally, the pipeline expects the batch column. This column will be used to perform the batch correction approach.
+
 #### 4.2. Minimal command-line
 
 To execute the pipeline, users should use the command line structure outlined below. **Please**, note the semantic differences between using one dash (-) for Nextflow commands and two dashes (--) for pipeline commands. Commands with two dashes are just for specific pipeline tasks, like adjusting filtering or thresholds on the single-cell analysis.

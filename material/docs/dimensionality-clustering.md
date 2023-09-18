@@ -4,7 +4,7 @@
 
 Dimensionality reduction and cell clustering are fundamental steps in single-cell RNA-sequencing (scRNA-seq) analysis. In this tutorial, we emphasize the primary parameters associated with dimensionality reduction and clustering. We will also delve into PCA loadings, metrics for evaluating clustering, and UMAP visualization
 
-## Hands-on
+## Step-by-step
 
 In this hands-on section, we will cover several analytical steps. Initially, the pipeline will combine sample matrices into one Seurat object. Subsequently, it will carry out normalization, dimensionality reduction, and clustering. Collectively, these procedures will generate a preliminary clustering used for distinguishing between malignant and non-malignant cells.
 

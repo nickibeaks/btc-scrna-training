@@ -64,6 +64,10 @@ LISI plots comprise two components: iLISI and cLISI. iLISI evaluates the mixing 
 
 ![Image caption](figures/lisi-fastmnn.png){align=center}
 
+!!! warning
+
+    Please note that because we are using a reduced dataset (cell subsampling), the LISI plots might not reflect the actual expectations.
+
 ## Reference
 
 1. [A test metric for assessing single-cell RNA-seq batch correction](https://www.nature.com/articles/s41592-018-0254-1)

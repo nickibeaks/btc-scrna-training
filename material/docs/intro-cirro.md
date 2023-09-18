@@ -6,6 +6,11 @@ Cirro is a cloud platform that simplifies access to cutting-edge pipelines to ad
 
 ![Image caption](figures/ciro-interface-step1.png){align=center}
 
+
+!!! tip
+
+    For more information regarding Cirro, please see its official [documentation](https://docs.cirro.bio).
+
 ## BTC scRNA settings
 
 When configuring the pipeline form, there are a few essential settings for this training. Ensure the `Dataset` is set to **BTC Training dataset** and the `Copy Parameters From` option is selected as **Run_01**.

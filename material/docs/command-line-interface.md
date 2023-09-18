@@ -57,6 +57,15 @@ Reference genome-related files and options required for the workflow.
 | `input_cell_markers_db` | Path to cell annotation CSV file | `string` | ./assets/cell_markers_database.csv |
 | `input_annotation_level` | Define annotation level. Currently, only Major cells are available. | `string` | Major cells |
 
+## Cell-cell communication parameters
+
+| Parameter | Description | Type | Default | 
+|-----------|-----------|-----------|-----------|
+| `input_source_groups` | Source cell type names | `string` | all |
+| `input_target_groups` | Target cell type names | `string` | all |
+| `input_cellchat_annotation` | CellChat interactions type | `string` | Secreted Signaling |
+
+
 ## Batch correction parameters
 
 | Parameter | Description | Type | Default | 
