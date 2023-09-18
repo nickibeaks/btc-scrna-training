@@ -9,6 +9,7 @@ Nextflow can be used on any POSIX-compatible system (Linux, OS X, WSL). It requi
 ```{ .bash .copy }
 wget -qO- https://get.nextflow.io | bash
 ```
+
 ### 2. Containerization
 
 In line with contemporary pipelines, the BTC scRNA pipeline is powered by multiple Docker container. On that note, distinct computational environments will depend on distinct container technologies, such as Docker (v20.10.22) and Singularity (v3.7.0). For instance, HPC strongly depend on Singularity, therefore it should be explicited defined into `profile` configurations. For a better understanding, refer to the [advanced](advanced.md) section. Additionally, check the [containers](https://github.com/break-through-cancer/btc-sc-containers) repository.
@@ -45,7 +46,14 @@ nextflow run single_cell_basic.nf --project_name <PROJECT> --sample_csv <path/to
 ```
 At the end, the pipeline will make a folder named after the `--project_name` command. This folder will have all the results. The `-resume` command leverage Nextflow caching, i.e., resuming executions to avoid undesirable computational time.
 
-#### 4.3. Shorten command-line
+#### 4.3. Staging images and genome indexes
+
+The pipeline needs to stage (download) multiple components to run. This can pose challenges in HPC environments with strict network policies. As a solution, consider using the `-stub` option on a node with a network connection. The `-stub` will stage all the necessary components without actually executing any analysis. Thus, it serves as a bootstrap run for the pipeline. Please note that **stub** will generate dummy outputs.
+
+```{ .bash .copy }
+nextflow run single_cell_basic.nf --project_name <PROJECT> --sample_csv <path/to/sample_table.csv> --meta_data <path/to/meta_data.csv> --cancer_type <CANCER TYPE> -resume -profile <PROFILE> -stub
+```
+#### 4.4. Shorten command-line
 
 Long command lines can be tricky. Thankfully, with Nextflow's `-params-file`, we can make things simpler. This is a JSON file that has all the instructions related to a specific run. If you're trying out different settings, it could a best practices to keep separate files for each test, e.g., PARAMS_TEST_01.json or PARAMS_TEST_02.json.
 

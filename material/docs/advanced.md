@@ -63,7 +63,7 @@ To customize the cell markers database, it's essential to adhere to pipeline con
 
 !!! tip
 
-    Note that each marker (gene) is into a single row. This long format is related with best practices for data analysis.
+    Note that each marker (gene) is presented in a single row. This long format aligns with best practices for data analysis.
 
 #### 2.1. Meta-programs
 
@@ -71,3 +71,40 @@ Similar to customizing cell markers, users will need to adhere to pre-establishe
 
 {{ read_csv('./assets/example_meta_programs.csv') }}
 
+---
+
+### 3. Adding custom genomes on the pipeline (Cellranger alignment).
+
+The pipeline employs Cellranger for alignment. We set up the reference genome based on Gencode (v46) and GRCH38. To achieve this, we adhered to the tutorial provided in the 10x Genomics [documentation](https://support.10xgenomics.com/single-cell-gene-expression/software/release-notes/build#grch38_%23%7Bfiles.refdata_GRCh38.version%7D). 
+
+Alternatively, users can substitute it with a version of their choice, but certain conventions must be observed. The **mkref** output should be stored in a folder that adheres to the following structure: 
+
+```
+Genomes/Homo_sapiens/ANNOTATION/GENOME_VERSION/
+```
+
+The terms **ANNOTATION** and **GENOME_VERSION** should be replaced with the user's preferred choices. Next, the user will need to replace edit a few lines on `conf/igenomes.config` within `btc-scrna-pipeline` folder. 
+
+```
+params {
+    // illumina iGenomes reference file paths
+    genomes {
+        'GRCh38' {
+            cellranger       = "${params.igenomes_base}/Genomes/Homo_sapiens/Gencode46/GRCh38"
+        }
+        // Add your custom genome here
+        'Custom' {
+            cellranger       = "${params.igenomes_base}/Genomes/Homo_sapiens/ANNOTATION/GENOME_VERSION"
+        }
+    }
+}
+
+```
+
+Finally, the command line should have both `genome` and `igenomes_base` parameters.
+
+```{.bash .copy}
+
+nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_table.csv --meta_data meta_data.csv --cancer_type Ovarian --genome Custom path/to/Genomes/Homo_sapiens/ANNOTATION/GENOME_VERSION" --igenomes_base -resume -profile seadragon
+
+```
