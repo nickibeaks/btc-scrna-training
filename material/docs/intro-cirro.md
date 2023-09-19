@@ -9,7 +9,7 @@ Cirro is a cloud platform that simplifies access to cutting-edge pipelines to ad
 
 !!! tip
 
-    For more information regarding Cirro, please see its official [documentation](https://docs.cirro.bio).
+    For more information related to Cirro, please see its official [documentation](https://docs.cirro.bio).
 
 ## BTC scRNA settings
 

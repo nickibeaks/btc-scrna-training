@@ -36,7 +36,15 @@ Alternatively, we execute this task on [Cirro](https://cirro.bio).
 
 #### 2.1. LIANA output
 
+![Image caption](figures/bubble-liana-communication.png){align=center}
+
+![Image caption](figures/heatmap-liana-strength.png){align=center}
+
 #### 2.2. CellChat output
+
+![Image caption](figures/circus-cellchat.png){align=center}
+
+![Image caption](figures/circus-cellchat-subset.png){align=center}
 
 ## Reference
 
