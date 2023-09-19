@@ -36,11 +36,17 @@ Alternatively, we execute this task on [Cirro](https://cirro.bio).
 
 #### 2.1. LIANA output
 
+"The bubble plot illustrates the interactions between ligand-receptor (L-R) pairs across various cell types, including interaction specificity and expression magnitude metrics. Interaction specificity measures the degree of L-R exclusivity among cell types, i.e., putative a preferential "communication" pathway. Meanwhile, expression magnitude indicates the strength of L-R interactions within a cell population."
+
 ![Image caption](figures/bubble-liana-communication.png){align=center}
+
+The heatmap displays the interaction directionality between Sender and Receiver populations.
 
 ![Image caption](figures/heatmap-liana-strength.png){align=center}
 
 #### 2.2. CellChat output
+
+Alternatively, we can explore results obtained exclusively from CellChat. The network displays various metrics related to interaction strength and frequency across populations. These can be further divided into cell-based plots, as detailed below.
 
 ![Image caption](figures/circus-cellchat.png){align=center}
 
