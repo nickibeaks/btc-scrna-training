@@ -42,6 +42,23 @@ nextflow run single_cell_basic.nf --project_name Training --sample_csv sample_ta
 
 ```
 
+#### 1.2. On Cirro
+
+Alternatively, we execute this task on [Cirro](https://cirro.bio).
+
+!!! info "Cirro"
+
+    * `Estimated number of cells`                = 300
+    * `Mean reads per cell`                      = 25000
+    * `Median genes per cell`                    = 900
+    * `Median UMI per cell`                      = 1000
+    * `Minimum features per cell`                = 300
+    * `Maximum features per cell`                = 7500
+    * `Percentage of mitochondrial genes`        = 25
+    * `Number of observed cells`                 = 300
+
+**Please note:** When setting up the pipeline form make sure the `Dataset` is configured to **BTC Training dataset** and choose **Run_02** for the `Copy Parameters From option`. Additionally, set the `Entrypoint parameter` to **Basic**.
+
 ### 2. Inspecting report
 
 A fundamental component in the pipeline is related to its HTML reports generation. Over the tutorials, we will browse several HTML reports and discuss key features in each analysis. The first report, "Rendering QC report", produces an interactive table reporting estimates and observed metrics for each sample.
@@ -50,7 +67,7 @@ A fundamental component in the pipeline is related to its HTML reports generatio
 
 The QC table displays metrics related to multiple samples, along with a QC label indicating the status of each sample (SUCCESS, FIXABLE, or FAILURE). The filtering system was developed with a focus on traceability, allowing users to inspect which metrics do not meet expectations and make necessary adjustments. Additionally, it enables users to determine whether the samples are failing at the library preparation stage or due to cell-level quality issues.
 
-### 3. Adjusting filterings
+### 3. Exercise: Adjusting filterings
 
 Now that we have assessed the quality control reports, we will proceed with the analysis by adjusting the threshold. In this case, we will be more permissive to include the **SPECTRUM-OV-065_S1_CD45P_RIGHT_OVARY** sample. To achieve this, we will change the `thr_n_observed_cells` to 250 cells after filtering mitochondrial RNA percentage. Please note that this adjustment will be applied specifically to this subset, which contains only a fraction of cells per sample.
 

@@ -42,6 +42,8 @@ Alternatively, we execute this task on [Cirro](https://cirro.bio).
     * `Resolution threshold`                                    = 0.25
     * `Cell proportion for ROGUE calculation`                   = 0.25
 
+**Please note:** When setting up the pipeline form make sure the `Dataset` is configured to **BTC Training dataset** and choose **Run_02** for the `Copy Parameters From option`. Additionally, set the `Entrypoint parameter` to **Basic**.
+
 ### 2. Inspecting report
 
 #### 2.1. Highly variable genes (HGV)
@@ -71,6 +73,12 @@ ROGUE is an entropy-based metric designed to evaluate cluster purity in single-c
 ![Image caption](figures/boxplot-rogue.png){align=center}
 
 The ROGUE score can also provide insights regarding data quality. For example, samples with a low average ROGUE score may contain a higher proportion of doublets.
+
+### 3. Exercise: Playing around with multiple paremeters
+
+!!! note "Question"
+
+    What would happen if we changed the features and the resolution threshold?
 
 ---
 

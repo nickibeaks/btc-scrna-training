@@ -36,6 +36,8 @@ Alternatively, we execute this task on [Cirro](https://cirro.bio). Please, be su
     * `Defining cluster size limit`                       = 1000
     * `Consensus score threshold (Beta)`                  = 2
 
+**Please note:** When setting up the pipeline form make sure the `Dataset` is configured to **BTC Training dataset** and choose **Run_01** for the `Copy Parameters From option`. Additionally, set the `Entrypoint parameter` to **Complete**.
+
 ### 2. Inspecting report
 
 #### 2.1. InferCNV predictions
@@ -64,4 +66,12 @@ Alternatively, we also offer annotations based on the consensus approach (**unde
 
 The malignancy prediction can generally be correlated with CD45 status (protein-level expression). However, minor discrepancies might be linked to the presence of **normal** epithelial cells in the dataset.
 
+### 3. Exercise: Exploring alternative approaches to perform malignant identification
+
+!!! note "Question"
+
+    Does the consensus method affect the meta-program analysis?
+
 ## Reference
+
+1. [Infer Copy Number Variation from Single-Cell RNA-Seq Data](https://bioconductor.org/packages/release/bioc/html/infercnv.html)

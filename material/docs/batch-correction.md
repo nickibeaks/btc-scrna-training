@@ -41,6 +41,8 @@ Alternatively, we execute this task on [Cirro](https://cirro.bio).
     * `Cell proportion for Batch evaluation`        = 0.30
     * `Define LISI types for Density plot`          = cLISI;iLISI
 
+**Please note:** When setting up the pipeline form make sure the `Dataset` is configured to **BTC Training dataset** and choose **Run_01** for the `Copy Parameters From option`. Additionally, set the `Entrypoint parameter` to **Complete**.
+
 ### 2. Inspecting report
 
 #### 2.1. Batch evaluation table
@@ -52,7 +54,6 @@ To ensure interpretability we incorporated multiple quality metrics. These metri
 Furthermore, we leverage the scPOP z-score to aggregate multiple metrics. It is a basic approach, but it can be used to select which batch correction method is performing better on that specific dataset.
 
 ![Image caption](figures/report-evaluation2.png){align=center}
-
 
 #### 2.2. UMAP and LISI plots
 
@@ -67,6 +68,12 @@ LISI plots comprise two components: iLISI and cLISI. iLISI evaluates the mixing 
 !!! warning
 
     Please note that because we are using a reduced dataset (cell subsampling), the LISI plots might not reflect the actual expectations.
+
+### 3. Exercise: Selecting your favorite batch correction model
+
+!!! note "Question"
+
+    How does the batch correction method influence subsequent results? Furthermore, does a change in cell proportion affect the quality metrics?
 
 ## Reference
 

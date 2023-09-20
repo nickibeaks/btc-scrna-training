@@ -6,16 +6,15 @@ Cell-cell communication analysis offers insights into the interactions among dif
 
 ## Step-by-step
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-
 ### 1. Running pipeline
 
 #### 1.1. On HPC
 
 !!! info "HPC"
 
-    * `input_cell_markers_db`    = ./assets/cell_markers_database.csv
-    * `input_annotation_level`   = Major cells
+    * `input_source_groups`         = all
+    * `input_target_groups`         = all
+    * `input_cellchat_annotation`   = Secreted Signaling
 
 ```{.bash .copy}
 
@@ -29,8 +28,11 @@ Alternatively, we execute this task on [Cirro](https://cirro.bio).
 
 !!! info "Cirro"
 
-    * `Input cell markers`              = Default
-    * `Annotation level`                = Major cells
+    * `Source cell type names`              = all
+    * `Target cell type names`              = all
+    * `CellChat interactions type`          = Secreted Signaling
+
+**Please note:** When setting up the pipeline form make sure the `Dataset` is configured to **BTC Training dataset** and choose **Run_01** for the `Copy Parameters From option`. Additionally, set the `Entrypoint parameter` to **Complete**.
 
 ### 2. Inspecting report
 
@@ -51,6 +53,12 @@ Alternatively, we can explore results obtained exclusively from CellChat. The ne
 ![Image caption](figures/circus-cellchat.png){align=center}
 
 ![Image caption](figures/circus-cellchat-subset.png){align=center}
+
+### 3. Exercise: Manipulating cell-cell communication database
+
+!!! note "Question"
+
+    What happens when switching the interaction type to Cell-Cell Contact?
 
 ## Reference
 
