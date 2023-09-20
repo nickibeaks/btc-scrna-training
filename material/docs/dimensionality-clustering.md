@@ -52,7 +52,7 @@ In the first report, produces multiple figures, including the HGV distribution o
 
 ![Image caption](figures/pca-highly-variable-features.png){align=center}
 
-As mentione earlier, loadings represent the genes/features contribution to each principal component or other dimension reduction. Visualizing loadings provides insights in which genes are driving the separation observed in a particular component. In turn, these genes will strongly the clustering process.
+As mentione earlier, loadings represent the genes/features contribution to each principal component or other dimension reduction. Visualizing loadings provides insights in which genes are driving the separation observed in a particular component. In turn, these genes will strongly affect the clustering process.
 
 ![Image caption](figures/pca-loadings.png){align=center}
 
