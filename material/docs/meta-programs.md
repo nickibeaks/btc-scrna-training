@@ -32,6 +32,8 @@ Alternatively, we execute this task on [Cirro](https://cirro.bio).
     * `Meta-program cell category`                                  = Malignant
     * `Meta-data columns to be displayed on heatmap`                = source_name;seurat_clusters
 
+**Please note:** When setting up the pipeline form make sure the `Dataset` is configured to **BTC Training dataset** and choose **Run_01** for the `Copy Parameters From option`. Additionally, set the `Entrypoint parameter` to **Complete**.
+
 ### 2. Inspecting report
 
 #### 2.1. Meta-program and ITH prediction
